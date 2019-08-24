@@ -19,4 +19,9 @@ class Book extends Model
     {
     	return $this->belongsTo('App\Models\User');
     }
+
+    public function getImgAttribute()
+    {
+        return $this->image ?? config('book.defaultImagePath');
+    }
 }
