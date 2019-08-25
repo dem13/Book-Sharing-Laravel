@@ -14,7 +14,7 @@ class BookController extends Controller
      */
     public function __construct()
     {
-    	$this->middleware('auth')->except(['show']);
+    	$this->middleware('auth')->except(['show', 'list']);
     }
 
     /**
@@ -32,6 +32,22 @@ class BookController extends Controller
     	}
 
     	return view('book.show', compact('book'));
+    }
+
+    /**
+     * List of all books
+     * 
+     * @param  \Illuminate\Http\Request $request
+     */
+    public function list(Request $request)
+    {
+    	$query = Book::with(['author']);
+
+    	$query->orderBy('id', 'desc');
+
+    	$books = $query->paginate(config('book.booksPerPage'));
+
+    	return view('book.list', compact('books'));
     }
 
     /**

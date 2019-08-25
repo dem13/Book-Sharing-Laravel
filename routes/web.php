@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'BookController@list');
 
 Auth::routes();
 
@@ -21,6 +19,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::name('book.')->group(function(){
 	Route::get('book/{id}', 'BookController@show')->where(['id' => '[0-9]+'])->name('show');
+	Route::get('book/list', 'BookController@list')->name('list');
+	
 	Route::get('book/add', 'BookController@add')->name('add');
 	Route::post('book', 'BookController@store')->name('store');
 });

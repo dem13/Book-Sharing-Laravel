@@ -6,4 +6,6 @@ return [
 	
 	'uploadImagePath' => 'storage/books',
 
+	'booksPerPage' => 20
+
 ];

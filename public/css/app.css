@@ -10649,18 +10649,18 @@ a.text-dark:focus {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-.book-title .tooltipc {
+.tooltipc {
   position: relative;
 }
 
-.book-title .tooltipc h2 {
+.tooltipc h2 {
   text-overflow: ellipsis;
   overflow: hidden;
   width: 100%;
   white-space: nowrap;
 }
 
-.book-title .tooltipc .tooltiptextc {
+.tooltipc .tooltiptextc {
   visibility: hidden;
   width: 30%;
   background-color: black;
@@ -10669,13 +10669,13 @@ a.text-dark:focus {
   padding: 10px 5px 5px 10px;
   border-radius: 6px;
   position: absolute;
-  z-index: 1;
+  z-index: 10;
   top: 100%;
   left: 50%;
   margin-left: -50%;
 }
 
-.book-title .tooltipc .tooltiptextc::after {
+.tooltipc .tooltiptextc::after {
   content: " ";
   position: absolute;
   bottom: 100%;
@@ -10686,7 +10686,83 @@ a.text-dark:focus {
   border-color: transparent transparent black transparent;
 }
 
-.book-title .tooltipc:hover .tooltiptextc {
+.tooltipc .tooltiptextv {
+  visibility: hidden;
+  width: 100%;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 10px 5px 5px 10px;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 10;
+  top: 100%;
+  left: 50%;
+  margin-left: -50%;
+  word-wrap: break-word;
+}
+
+.tooltipc .tooltiptextv::after {
+  content: " ";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
+}
+
+.tooltipc:hover .tooltiptextc {
   visibility: visible;
+}
+
+.tooltipc:hover .tooltiptextv {
+  visibility: visible;
+}
+
+.book-list .book-list-link {
+  text-decoration: none;
+}
+
+.book-list .book-list-item {
+  margin-bottom: 20px;
+  padding: 10px;
+  text-align: center;
+}
+
+.book-list .book-list-item .book-list-item-image img {
+  width: 152px;
+  height: 229px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.book-list .book-list-item .book-list-item-info {
+  padding-left: 10px;
+}
+
+.book-list .book-list-item .book-list-item-title {
+  font-size: 1.5em;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 100%;
+  white-space: nowrap;
+}
+
+.book-list .book-list-item .book-list-item-desc {
+  text-align: left;
+}
+
+.book-list .book-list-pages ul {
+  justify-content: center;
+}
+
+@media (max-width: 600px) {
+  .book-list-item {
+    flex-direction: column;
+  }
 }
 

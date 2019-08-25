@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Storage;
 
 class Book extends Model
 {
@@ -22,6 +23,8 @@ class Book extends Model
 
     public function getImgAttribute()
     {
-        return $this->image ?? config('book.defaultImagePath');
+        return  Storage::disk('public')->exists($this->image) ?
+            $this->image :
+            config('book.defaultImagePath');
     }
 }
