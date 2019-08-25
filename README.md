@@ -16,15 +16,15 @@ Simple web app where you can create and view books
 - `cp .env.example .env`
 - `php artisan key:generate`
 
-4 Enter the data for connecting to the database and data for sending e-mail
+4. Enter the data for connecting to the database and data for sending e-mail
 
 - `nano .env`
 
-5 Migrate database
+5. Migrate database
 
 - `php artisan migrate --seed` (You can remove the --seed flag if you do not want to have samples of users, books, and authors.)
 
-6 Start application
+6. Start application
 
 - `php artisan serve`
 
